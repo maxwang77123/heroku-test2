@@ -94,7 +94,7 @@ def start_scheduler():
     scheduler = BackgroundScheduler()
 
     # run every 10 minute
-    scheduler.add_job(job_wakeup, 'cron', minute='*/10')
+    #scheduler.add_job(job_wakeup, 'cron', minute='*/10')
 
     # 每天早上6:30執行
     #scheduler.add_job(job_function2, 'cron', hour='6', minute='30')
