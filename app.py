@@ -142,6 +142,11 @@ def aqi_chart_24h():
         aqi_list.append( float(item['aqi']) )
 
     # plot
+    plt.plot(months, tsp_list, 'b-o')
+    plt.plot(months, tsp_list2, 'r:v')
+    plt.xlabel('time', fontproperties = font)
+    plt.ylabel('api', fontproperties = font)
+    plt.xticks(rotation=90)
     plt.plot(aqi_list)
     plt.grid()
     plt.savefig('img.png')
