@@ -2,6 +2,9 @@
 #------------------------
 # v2021-11-01   1.W06, DB + web api
 #               2. plot chart
+# v2021-11-02   1. TODO: 加入 https://startbootstrap.com/themes 中的範本
+#                   ex1: https://startbootstrap.com/theme/business-casual
+#                   ex2: https://startbootstrap.com/theme/sb-admin-2
 #========================
 
 from flask import Flask, request, abort, render_template, Response
@@ -138,16 +141,10 @@ def aqi_chart_24h():
     data = resultProxy.fetchall()
 
     aqi_list = list()
-    time_list=list()
     for item in data:
         aqi_list.append( float(item['aqi']) )
-        time_list.append(item['time'][5:13])
 
     # plot
-    plt.plot(time_list, aqi_list, 'b-o')
-    plt.xlabel('time')
-    plt.ylabel('api')
-    plt.xticks(rotation=90)
     plt.plot(aqi_list)
     plt.grid()
     plt.savefig('img.png')
