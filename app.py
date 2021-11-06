@@ -138,8 +138,10 @@ def aqi_chart_24h():
     data = resultProxy.fetchall()
 
     aqi_list = list()
+    time_list=list()
     for item in data:
         aqi_list.append( float(item['aqi']) )
+        time_list.append(item['time'])
 
     # plot
     plt.plot(time, tsp_list, 'b-o')
