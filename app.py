@@ -144,8 +144,8 @@ def aqi_chart_24h():
         time_list.append(item['time'])
 
     # plot
-    plt.plot(time, tsp_list, 'b-o')
-    plt.plot(time, tsp_list2, 'r:v')
+    plt.plot(time, api_list, 'b-o')
+    plt.plot(time, api_list2, 'r:v')
     plt.xlabel('time', fontproperties = font)
     plt.ylabel('api', fontproperties = font)
     plt.xticks(rotation=90)
